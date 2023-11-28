@@ -1,0 +1,234 @@
+/* @import '../node_modules/bootstrap/scss/bootstrap-reboot.scss';css reset */
+@import '../node_modules/bootstrap/scss/bootstrap-grid.scss';/*格線系統*/
+@import '../stylesheets/_variables.scss';
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");/*icon*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap'); /*Open Sans-800*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;900&display=swap'); /*Noto Sans Traditional Chinese*/
+@font-face{
+    font-family: 'MantouSans';
+    src: url('../fonts/MantouSans-Regular.ttf') format("truetype");
+}
+:root{
+    --slate-50: #F8FAFC;
+    --slate-100: #F1F5F9;
+    --slate-200: #E2E8F0;
+    --slate-300: #CBD5E1;
+    --slate-400: #94A3B8;
+    --slate-500: #64748B;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1E293B;
+    --slate-900: #0F172A;
+    --primary-gradient: -webkit-linear-gradient(left, #E5793B 1.54%, #FF4185 97.86%);
+    --primary-color: #FFF;
+    --text-primary: var(--slate-700);
+    --text-secondary: var(--slate-400);
+    --bg-primary: #0F172A;
+    --bg-secondary: #F7ECE1;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--text-primary);
+    font-synthesis: none;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+}
+
+.noto-sans-black{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 900;
+}
+
+html{
+    font-size: 16px;
+    height: 100%;
+
+}
+body{
+    line-height: 1.5;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+
+
+/*導覽列logo*/
+.brand{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/*導覽列*/
+.navbar{
+position: fixed;
+/* position: sticky; */
+top: 0px;
+padding: 0px 24px;
+z-index: 10;
+width: 100vw;
+box-sizing: border-box;
+overflow-x: hidden;
+background: var(--bg-primary);
+transition: background 0.8s ease-in-out 0s;
+backdrop-filter: blur(4px); /*毛玻璃特效*/
+z-index: 1000;
+    .container{
+        display: flex;
+        padding: 12px 24px;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+        border-radius: 16px;
+        max-width: none;
+        margin:0;
+    }
+    .navbar-logo{
+        width: 28px;
+        height: 28px;
+        object-fit: cover;
+    }
+    .logo-title{
+        color: var(--primary-color);
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 150%;
+    }
+    .navbar-r-title{
+        display: flex;
+        align-items: center;
+        cursor: default;
+        color: var(--primary-color);
+        p{
+            display: inline;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: 900;
+            font-size: x-large;
+            margin: 5px;
+            color:#E11D48;
+        }
+    }
+}
+
+#section_home {
+    .wrapper{
+        height: 100vh;
+        background: #475569;
+    }
+    .section_home_container{
+        margin: 0;
+        height: 100%;
+    }
+    .col-md-6{
+        height: 100%;
+        svg{
+            height: 100%;
+            padding: 82px 0 0 0;
+            width: 100%;
+        }
+        path {
+            stroke: white;
+            fill: transparent;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+    
+        path:hover {
+            fill: #B99362;
+            transform: translate(-5px, -5px);
+        }
+    }
+    .section_home_data{
+        height: 100%;
+        padding: 82px 30px 0 0;
+        width: 100%;
+    }
+    .change-year-box{
+        width: 100%;
+        height: 40px;
+        background: #FFF;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span{
+            color:#475569;
+            font-size: 20px;
+            font-weight: 900;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+    }
+    .section_home_data_container{
+        height: 510px;
+        margin-top: 20px;
+        background-color: #ffffff36;
+        border-radius: 10px;
+    }
+}
+
+.modal-close{
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-white-rgb),var(--bs-bg-opacity))!important;
+    border: 0!important;
+}
+
+.modal-header{
+    border-bottom: none !important;
+}
+
+
+/*RWD*/
+@media (min-width:1200px) {
+    .modal-title{
+        font-size: 2rem;
+    }
+}
+@media (max-width: 1200px){
+   
+}
+
+@media (min-width: 992px){
+    
+}
+
+@media (max-width: 768px){
+    .navbar-r-title {
+        display: none !important;
+    }
+    .navbar{
+        padding: 0px;
+        .container {
+            border-radius: 0px;
+        }
+        .brand{
+            gap: 4px;
+        }
+        .brand .logo-title {
+            font-size: 20px;
+        }
+    }
+    /* #section_home{
+
+    } */
+}
+
+
+
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1259px){ 
+    
+}
